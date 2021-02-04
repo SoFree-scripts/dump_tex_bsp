@@ -22,3 +22,6 @@ bmodel_set:
  func_door_rotating       
  func_door_rotating_smart
  func_door_portcullis
+
+warning:
+ ambient_generic

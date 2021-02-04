@@ -42,25 +42,45 @@ def dump_textures(a_sof_map):
     textures = []
     index = 0
     while index < lump_size:
-        textures.append ( struct.unpack_from('32s',alltex,index+TEXNAME_OFFSET)[0].decode('latin-1').rstrip("\x00") )
+        textures.append ( (struct.unpack_from('32s',alltex,index+TEXNAME_OFFSET)[0].decode('latin-1').rstrip("\x00") + ".m32").lower() )
         index += SURFACE_HEADER_LEN
 
-    textures = list(set(textures))
+    textures = sorted(set(textures))
     # for tex in textures: 
     #     print(f"texname : {tex}")
     return textures
 
 
-
-def grabField(inlines,classname,fieldname,wav):
+def classExists(inlines,classname):
     found_intermission = -1
     line_number = 0
     for index,line in enumerate(inlines):
-        inlines[index].strip()
-        if line.startswith(f'"classname" "{classname}"'):
-            found_intermission = index
-            # print(f"debug:found {classname}")
-            break
+        # remove newline
+        search = inlines[index].split("\n")[0]
+        # separate and remove spaces
+        search = search.split(" ")
+        search = [ s for s in search if s ]
+        if len(search) > 1:
+            if search[0].lower() == "\"classname\"" and search[1] == f"\"{classname}\"":
+                return True
+    return False
+
+
+def grabField(inlines,classname,fieldname):
+    found_intermission = -1
+    line_number = 0
+    for index,line in enumerate(inlines):
+        # remove newline
+        search = inlines[index].split("\n")[0]
+        # separate and remove spaces
+        search = search.split(" ")
+        search = [ s for s in search if s ]
+
+        if len(search) > 1:
+            if search[0].lower() == "\"classname\"" and search[1] == f"\"{classname}\"":
+                found_intermission = index
+                # print(f"debug:found {classname}")
+                break
 
     if found_intermission != -1:
         # found the above
@@ -73,103 +93,109 @@ def grabField(inlines,classname,fieldname,wav):
         targetname = ""
         # search for targetname
         for line in inlines[start_line+1:end_line]:
-            splitted_line = line.split('"')[3]
-            num_of_splits = len(splitted_line)
-            space_splitted = splitted_line.split()
-            len_space = len(space_splitted)
-            if line.startswith(f'"{fieldname}"'):
-                if len_space >= 1:
-                    targetname = space_splitted[0]
-                else:
-                    print("error parsing entity table")
-                    sys.exit(1)
+            # remove newline
+            space_splitted = line.split("\n")[0]
+            # separate and remove spaces
+            space_splitted = space_splitted.split(" ")
+            search = [ s for s in space_splitted if s ]
+            if len(search) > 1:
+                if search[0] == f"\"{fieldname}\"":
+                    targetname = search[1]
+                    break
         if len(targetname) > 0:
             # print(type(targetname))
-            if wav == WAVLESS:
-                if targetname.endswith(".wav"):
-                    print(f"WARNING: mapname:{inbsp} has non-functioning sound field {classname} @{fieldname}, remove .wav extension")
-                    return targetname
-                else:
-                    if '.' in targetname:
-                        targetname = targetname.split(".")[0]
-                    targetname += ".wav"
-                    return targetname
-            elif wav == OPTIONAL_WAV:
-                if targetname.endswith(".wav"):
-                    return targetname
-                else:
-                    if '.' in targetname:
-                        targetname = targetname.split(".")[0]
-                    targetname += ".wav"
-                    return targetname
-            elif wav == REQUIRES_WAV:
-                if targetname.endswith(".wav"):
-                    return targetname
-                else:
-                    print(f"WARNING: mapname:{inbsp} has non-functioning sound field {classname} @{fieldname}, append .wav extension")
-                    if '.' in targetname:
-                        targetname = targetname.split(".")[0]
-                    targetname += ".wav"
-                    return targetname
-
-                targetname.split()
-            return targetname
+            # print(targetname)
+            return targetname.replace("\"","").lower()
     return None
 
 REQUIRES_WAV = 2
 OPTIONAL_WAV = 1
 WAVLESS = 0
 fieldFindSet = (("trigger_useable","targetname",REQUIRES_WAV),
-                ("target_speaker","noise",OPTIONAL_WAV)
+                ("target_speaker","noise",OPTIONAL_WAV),
+                ("worldspawn","startmusic",OPTIONAL_WAV),
+                ("worldspawn","sounds",OPTIONAL_WAV)
                )
 # get the exact classname data from entity text buffer
-def find_sounds(a_sof_map):
-
-    entlist,lump_size = grab_lump(0,a_sof_map)
-    if LOGGING:
-        with open("entlist.txt","wb") as f:
-            f.write(entlist)
-    soundList = []
-    stringfile = io.StringIO(entlist.tobytes().decode("latin-1"))
-    lines = stringfile.readlines()
-    stringfile.close()
+def find_sounds(entlist,a_sof_map):
 
     soundList = []
     for clss,fld,wavReq in fieldFindSet:
-        n = grabField(lines,clss,fld,wavReq)
-        if n is not None:
-            soundList.append(n)
-    return soundList
+        n = grabField(entlist,clss,fld)
+        if n is None:
+            continue
+        # make sure we get a string ending in .wav
+        if wavReq == WAVLESS:
+            if n.endswith(".wav"):
+                print(f"WARNING: mapname:{inbsp} has non-functioning sound field {classname} @{fieldname}, remove .wav extension")
+            else:
+                if '.' in n:
+                    n = n.split(".")[0]
+                n += ".wav"
+        elif wavReq == OPTIONAL_WAV:
+            if n.endswith(".wav"):
+                pass
+            else:
+                if '.' in n:
+                    n = n.split(".")[0]
+                n += ".wav"
+        elif wavReq == REQUIRES_WAV:
+            if n.endswith(".wav"):
+                pass
+            else:
+                print(f"WARNING: mapname:{inbsp} has non-functioning sound field {classname} @{fieldname}, append .wav extension")
+                if '.' in n:
+                    n = n.split(".")[0]
+                n += ".wav"
+        soundList.append(n)
+
+    # print(soundList)
+    return sorted(set(soundList))
 
 
 # print(sys.argv[1])
 inbsp = sys.argv[1]
 
+# sof uses stricmp for keyname
 with open(inbsp,"rb") as sof_map:
     data = sof_map.read()
     if struct.unpack_from('4s',data,0)[0] != b"IBSP":
         print("map is corrupt")
         sys.exit(1)
 
-    # print( type(data))
-    print("Textures: ")
-    all_textures = dump_textures(data)
-    for t in all_textures:
-        print(t)
-    
+    entlist,lump_size = grab_lump(0,data)
     if LOGGING:
-        with open("tex.txt","w") as f:
-            for each in all_textures:
-                f.write(each + "\n")
+        with open("entlist.txt","wb") as f:
+            f.write(entlist)
+
+    stringfile = io.StringIO(entlist.tobytes().decode("latin-1"))
+    entlist_lines = stringfile.readlines()
+    stringfile.close()
+    if classExists(entlist_lines,"ambient_generic"):
+        print(f"WARNING: mapname:{inbsp} has non-functioning sound field in classname ambient_generic is not valid for sof1.")
+    # print( type(data))
+    print("__TEXTURES__")
+    all_textures = dump_textures(data)
+    if len(all_textures) == 0:
+        print(" [NULL]")
+    else:
+        for t in all_textures:
+            print(" " + t)
+        
+        if LOGGING:
+            with open("tex.txt","w") as f:
+                for each in all_textures:
+                    f.write(each + "\n")
 
     print()
-    print("Sounds: ")
-    all_sounds = find_sounds(data)
+    print("__SOUNDS__")
+    all_sounds = find_sounds(entlist_lines,data)
     if len(all_sounds) == 0:
-        print("no sound data in this entlist")
+        print(" [NULL]")
     else:
         for s in all_sounds:
-            print(s)
+            # print(type(s))
+            print(" " + s)
         if LOGGING:
             with open("sounds.txt","w") as f:
                 for snd in all_sounds:
