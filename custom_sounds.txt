@@ -1,0 +1,22 @@
+
+custom_sound:
+ trigger_speaker
+ trigger_useable
+ spawner_monster
+ spawner
+ func_rotating
+ func_button
+ func_train
+
+not_sound:
+ environ_effect
+ environ_effect_continual
+
+ambient_set:
+ environ_soundgen
+ func_ambientset
+ func_plat             
+ func_door               
+ func_door_rotating       
+ func_door_rotating_smart
+ func_door_portcullis
