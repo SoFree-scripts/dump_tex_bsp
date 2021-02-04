@@ -1,12 +1,7 @@
-
-custom_sound:
- trigger_speaker
- trigger_useable
- spawner_monster
- spawner
- func_rotating
- func_button
- func_train
+custom_sound optional .wav:
+ target_speaker @noise
+custom_sound forced "wav" ending:
+ trigger_useable @targetname
 
 not_sound:
  environ_effect
@@ -15,7 +10,14 @@ not_sound:
 ambient_set:
  environ_soundgen
  func_ambientset
- func_plat             
+
+bmodel_set:
+ spawner_monster @soundName
+ spawner @soundName
+ func_train
+ func_rotating
+ func_button
+ func_plat 
  func_door               
  func_door_rotating       
  func_door_rotating_smart
