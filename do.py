@@ -169,6 +169,7 @@ def grabFields(inlines,classname,fieldname):
                             # bad line
                             continue
                         splitted = [ s for s in [s.strip(' ') for s in splitted] if s ]
+
                         # print(splitted)
                         if len(splitted) > 1:
                             if splitted[0].lower() == f"{fieldname}":
@@ -236,48 +237,47 @@ def find_sounds(entlist,a_sof_map):
 
 # print(sys.argv[1])
 inbsp = sys.argv[1]
-
 # sof uses stricmp for keyname
 with open(inbsp,"rb") as sof_map:
     data = sof_map.read()
-    if struct.unpack_from('4s',data,0)[0] != b"IBSP":
-        print("map is corrupt")
-        sys.exit(1)
+if struct.unpack_from('4s',data,0)[0] != b"IBSP":
+    print("map is corrupt")
+    sys.exit(1)
 
-    entlist,lump_size = grab_lump(0,data)
+entlist,lump_size = grab_lump(0,data)
+if LOGGING:
+    with open("entlist.txt","wb") as f:
+        f.write(entlist)
+
+stringfile = io.StringIO(entlist.tobytes().decode("latin-1"))
+entlist_lines = stringfile.readlines()
+stringfile.close()
+if classExists(entlist_lines,"ambient_generic"):
+    print(f"WARNING: mapname:{inbsp} has non-functioning sound field in classname ambient_generic is not valid for sof1.")
+# print( type(data))
+print("__TEXTURES__")
+all_textures = dump_textures(data)
+if len(all_textures) == 0:
+    print(" [NULL]")
+else:
+    for t in all_textures:
+        print(" " + t)
+    
     if LOGGING:
-        with open("entlist.txt","wb") as f:
-            f.write(entlist)
+        with open("tex.txt","w") as f:
+            for each in all_textures:
+                f.write(each + "\n")
 
-    stringfile = io.StringIO(entlist.tobytes().decode("latin-1"))
-    entlist_lines = stringfile.readlines()
-    stringfile.close()
-    if classExists(entlist_lines,"ambient_generic"):
-        print(f"WARNING: mapname:{inbsp} has non-functioning sound field in classname ambient_generic is not valid for sof1.")
-    # print( type(data))
-    print("__TEXTURES__")
-    all_textures = dump_textures(data)
-    if len(all_textures) == 0:
-        print(" [NULL]")
-    else:
-        for t in all_textures:
-            print(" " + t)
-        
-        if LOGGING:
-            with open("tex.txt","w") as f:
-                for each in all_textures:
-                    f.write(each + "\n")
-
-    print()
-    print("__SOUNDS__")
-    all_sounds = find_sounds(entlist_lines,data)
-    if len(all_sounds) == 0:
-        print(" [NULL]")
-    else:
-        for s in all_sounds:
-            # print(type(s))
-            print(" " + s)
-        if LOGGING:
-            with open("sounds.txt","w") as f:
-                for snd in all_sounds:
-                    f.write(snd + "\n")
+print()
+print("__SOUNDS__")
+all_sounds = find_sounds(entlist_lines,data)
+if len(all_sounds) == 0:
+    print(" [NULL]")
+else:
+    for s in all_sounds:
+        # print(type(s))
+        print(" " + s)
+    if LOGGING:
+        with open("sounds.txt","w") as f:
+            for snd in all_sounds:
+                f.write(snd + "\n")
