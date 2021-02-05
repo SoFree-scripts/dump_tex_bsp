@@ -109,7 +109,7 @@ def grabField(inlines,classname,fieldname):
             if len(splitted) % 2 == 0:
                 # even is bad
                 continue
-            splitted = [ s for s in splitted if " " not in s if s]
+            splitted = [ s for s in [s.strip(' ') for s in splitted] if s ]
             if len(splitted) > 1:
                 if splitted[0].lower() == f"{fieldname}":
                     targetname = splitted[1]
@@ -125,11 +125,13 @@ def grabFields(inlines,classname,fieldname):
     line_number = 0
     next_bracket = 0
     for index,line in enumerate(inlines):
+
         if index < next_bracket:
             # efficiency
             continue
         else:
             # reset cos now searching for classname
+            # this is an open bracket
             next_bracket = 0
 
         # remove newline
@@ -138,15 +140,16 @@ def grabFields(inlines,classname,fieldname):
         if len(search) % 2 == 0:
             # even is bad
             continue
+
+
         # [1] and [3]
         # remove spaces and empty
         
-        search = [ s for s in search if " " not in s if s ]
-        # print("hi")
+        # print(search)
+        search = [ s for s in [s.strip(' ') for s in search] if s ]
+        
         if len(search) > 1:
-
             if search[0].lower() == "classname":
-
                 if search[1] == f"{classname}":
 
                     start_line = search_for_open_bracket(index,inlines)
@@ -165,16 +168,18 @@ def grabFields(inlines,classname,fieldname):
                             # even is bad
                             # bad line
                             continue
-                        splitted = [ s for s in splitted if " " not in s if s]
+                        splitted = [ s for s in [s.strip(' ') for s in splitted] if s ]
                         # print(splitted)
                         if len(splitted) > 1:
                             if splitted[0].lower() == f"{fieldname}":
                                 # we found it
+
                                 value = splitted[1]
                                 fields.append( value.lower() )
                                 # stop searching within this { }
                                 break
                 else:
+                    # its a classname not interested in - skip
                     next_bracket = search_for_open_bracket(index,inlines)
                     if next_bracket is None:
                         # reached end
