@@ -2,6 +2,8 @@ custom_sound optional .wav:
  target_speaker @noise
 custom_sound forced "wav" ending:
  trigger_useable @targetname
+ worldspawn @sounds
+ worldspawn @startmusic
 
 not_sound:
  environ_effect

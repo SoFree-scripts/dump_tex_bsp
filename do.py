@@ -58,10 +58,13 @@ def classExists(inlines,classname):
         # remove newline
         search = inlines[index].split("\n")[0]
         # separate and remove spaces
-        search = search.split(" ")
-        search = [ s for s in search if s ]
+        search = search.split('"')
+        if len(search) % 2 == 0:
+            # even is bad
+            continue
+        search = [ s for s in search if " " not in s if s]
         if len(search) > 1:
-            if search[0].lower() == "\"classname\"" and search[1] == f"\"{classname}\"":
+            if search[0].lower() == "classname" and search[1] == f"{classname}":
                 return True
     return False
 
@@ -72,12 +75,18 @@ def grabField(inlines,classname,fieldname):
     for index,line in enumerate(inlines):
         # remove newline
         search = inlines[index].split("\n")[0]
-        # separate and remove spaces
-        search = search.split(" ")
-        search = [ s for s in search if s ]
 
+        search = search.split('"')
+        if len(search) % 2 == 0:
+            # even is bad
+            continue
+        # [1] and [3]
+        # remove spaces
+
+        search = [ s for s in search if " " not in s if s ]
+        
         if len(search) > 1:
-            if search[0].lower() == "\"classname\"" and search[1] == f"\"{classname}\"":
+            if search[0].lower() == "classname" and search[1] == f"{classname}":
                 found_intermission = index
                 # print(f"debug:found {classname}")
                 break
@@ -94,19 +103,84 @@ def grabField(inlines,classname,fieldname):
         # search for targetname
         for line in inlines[start_line+1:end_line]:
             # remove newline
-            space_splitted = line.split("\n")[0]
+            splitted = line.split("\n")[0]
             # separate and remove spaces
-            space_splitted = space_splitted.split(" ")
-            search = [ s for s in space_splitted if s ]
-            if len(search) > 1:
-                if search[0] == f"\"{fieldname}\"":
-                    targetname = search[1]
+            splitted = splitted.split('"')
+            if len(splitted) % 2 == 0:
+                # even is bad
+                continue
+            splitted = [ s for s in splitted if " " not in s if s]
+            if len(splitted) > 1:
+                if splitted[0].lower() == f"{fieldname}":
+                    targetname = splitted[1]
                     break
         if len(targetname) > 0:
             # print(type(targetname))
             # print(targetname)
-            return targetname.replace("\"","").lower()
+            return targetname.lower()
     return None
+
+def grabFields(inlines,classname,fieldname):
+    fields = []
+    line_number = 0
+    next_bracket = 0
+    for index,line in enumerate(inlines):
+        if index < next_bracket:
+            # efficiency
+            continue
+        else:
+            # reset cos now searching for classname
+            next_bracket = 0
+
+        # remove newline
+        search = inlines[index].split("\n")[0]
+        search = search.split('"')
+        if len(search) % 2 == 0:
+            # even is bad
+            continue
+        # [1] and [3]
+        # remove spaces and empty
+        
+        search = [ s for s in search if " " not in s if s ]
+        # print("hi")
+        if len(search) > 1:
+
+            if search[0].lower() == "classname":
+
+                if search[1] == f"{classname}":
+
+                    start_line = search_for_open_bracket(index,inlines)
+                    end_line = search_for_closed_bracket(index,inlines)
+                    if start_line is None or end_line is None:
+                        print("error parsing entity table")
+                        sys.exit(1)
+                    value = ""
+                    # search for fieldname
+                    for line in inlines[start_line+1:end_line]:
+                        # remove newline
+                        splitted = line.split("\n")[0]
+                        # separate and remove spaces
+                        splitted = splitted.split('"')
+                        if len(splitted) % 2 == 0:
+                            # even is bad
+                            # bad line
+                            continue
+                        splitted = [ s for s in splitted if " " not in s if s]
+                        # print(splitted)
+                        if len(splitted) > 1:
+                            if splitted[0].lower() == f"{fieldname}":
+                                # we found it
+                                value = splitted[1]
+                                fields.append( value.lower() )
+                                # stop searching within this { }
+                                break
+                else:
+                    next_bracket = search_for_open_bracket(index,inlines)
+                    if next_bracket is None:
+                        # reached end
+                        break
+    # print(fields)
+    return fields
 
 REQUIRES_WAV = 2
 OPTIONAL_WAV = 1
@@ -121,33 +195,35 @@ def find_sounds(entlist,a_sof_map):
 
     soundList = []
     for clss,fld,wavReq in fieldFindSet:
-        n = grabField(entlist,clss,fld)
-        if n is None:
+        fields = grabFields(entlist,clss,fld)
+        if not fields:
             continue
-        # make sure we get a string ending in .wav
-        if wavReq == WAVLESS:
-            if n.endswith(".wav"):
-                print(f"WARNING: mapname:{inbsp} has non-functioning sound field {classname} @{fieldname}, remove .wav extension")
-            else:
-                if '.' in n:
-                    n = n.split(".")[0]
-                n += ".wav"
-        elif wavReq == OPTIONAL_WAV:
-            if n.endswith(".wav"):
-                pass
-            else:
-                if '.' in n:
-                    n = n.split(".")[0]
-                n += ".wav"
-        elif wavReq == REQUIRES_WAV:
-            if n.endswith(".wav"):
-                pass
-            else:
-                print(f"WARNING: mapname:{inbsp} has non-functioning sound field {classname} @{fieldname}, append .wav extension")
-                if '.' in n:
-                    n = n.split(".")[0]
-                n += ".wav"
-        soundList.append(n)
+        fields = list(set(fields))
+        for fidx,f in enumerate(fields):
+            # make sure we get a string ending in .wav
+            if wavReq == WAVLESS:
+                if f.endswith(".wav"):
+                    print(f"WARNING: mapname:{inbsp} has non-functioning sound field \"{f}\" {clss} @{fld}, remove .wav extension")
+                else:
+                    if '.' in f:
+                        fields[fidx] = f.split(".")[0]
+                    fields[fidx] += ".wav"
+            elif wavReq == OPTIONAL_WAV:
+                if f.endswith(".wav"):
+                    pass
+                else:
+                    if '.' in f:
+                        fields[fidx] = f.split(".")[0]
+                    fields[fidx] += ".wav"
+            elif wavReq == REQUIRES_WAV:
+                if f.endswith(".wav"):
+                    pass
+                else:
+                    print(f"WARNING: mapname:{inbsp} has non-functioning sound field \"{f}\" {clss} @{fld}, append .wav extension")
+                    if '.' in f:
+                        fields[fidx] = f.split(".")[0]
+                    fields[fidx] += ".wav"
+        soundList.extend(fields)
 
     # print(soundList)
     return sorted(set(soundList))
