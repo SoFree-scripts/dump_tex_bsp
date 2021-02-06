@@ -5,7 +5,7 @@ import os
 import json
 
 # Dont Print to console?
-SILENT=False
+SILENT=True
 # Write to a file?
 LOGGING=False
 # Show helpful warnings about broken map fields?
@@ -23,6 +23,9 @@ EXPORT_ENTS = ""
 
 EXPORT_SOUNDS_MISSING = []
 EXPORT_SOUNDS_EXIST = []
+
+EXPORT_TEXTURES_MISSING = []
+EXPORT_TEXTURES_EXIST = []
 
 
 # def get_tex():
@@ -57,9 +60,26 @@ def grab_lump(lump_num,a_sof_map):
     mview = memoryview(a_sof_map)
     return (mview[lump_offset:lump_offset+lump_size],lump_size)
 
+
+def buildTextures(texlistout,namein):
+
+    if EXISTSCHECK:
+        # DOES FILE EXIST / DO WE HAVE IT?
+        if os.path.isfile(os.path.normcase(os.path.join(texRsrcDir,namein.lstrip('/'))) ):
+            # WE HAVE THESE FILES
+            EXPORT_TEXTURES_EXIST.append(namein)
+        else:
+            # WE DO NOT HAVE THIS FILE / RESTORATION LIST
+            EXPORT_TEXTURES_MISSING.append(namein)
+    texlistout.append(namein)
+
 # get the entity_table text file out of bsp file
 def dump_textures(a_sof_map):
-    
+    global EXPORT_TEXTURES_EXIST, EXPORT_TEXTURES_MISSING
+    EXPORT_TEXTURES_EXIST = []
+    EXPORT_TEXTURES_MISSING = []
+    rsrcDir = os.path.join(EXISTSPATH,"sound")
+
     has_defaults = False
     if os.path.isfile("ignore_defaults_tex.txt"):
         with open("ignore_defaults_tex.txt",'r') as f:
@@ -79,11 +99,14 @@ def dump_textures(a_sof_map):
         name = (struct.unpack_from('32s',alltex,index+TEXNAME_OFFSET)[0].decode('latin-1').rstrip("\x00") + ".m32").lower()
         if has_defaults:
             if name not in def_sounds:
-                textures.append ( name )
+                buildTextures(textures,name)
         else:
-            textures.append ( name )
+            buildTextures(textures,name)
+
         index += SURFACE_HEADER_LEN
 
+    EXPORT_TEXTURES_EXIST = sorted(set(EXPORT_TEXTURES_EXIST))
+    EXPORT_TEXTURES_MISSING = sorted(set(EXPORT_TEXTURES_MISSING))
     textures = sorted(set(textures))
     # for tex in textures: 
     #     print(f"texname : {tex}")
@@ -244,7 +267,7 @@ def find_sounds(entlist,inbsp):
 
     soundList = []
     EXPORT_SOUNDS_MISSING = []
-    EXPORT_SOUNDS_MISSING_EXIST = []
+    EXPORT_SOUNDS_EXIST = []
 
     for clss,fld,wavReq in fieldFindSet:
         fields = grabFields(entlist,clss,fld)
@@ -288,14 +311,14 @@ def find_sounds(entlist,inbsp):
         for d in sorted(deleteme,reverse=True):
             del fields[d]
 
-        rsrcDir = os.path.join(EXISTSPATH,"sound")
         for fidx,f in enumerate(fields):
             if EXISTSCHECK:
-                if os.path.isfile(os.path.normcase(os.path.join(rsrcDir,fields[fidx].lstrip('/'))) ):
-                    # fields[fidx] += "     E"
+                # DOES FILE EXIST / DO WE HAVE IT?
+                if os.path.isfile(os.path.normcase(os.path.join(sndRsrcDir,fields[fidx].lstrip('/'))) ):
+                    # WE HAVE THESE FILES
                     EXPORT_SOUNDS_EXIST.append(f)
                 else:
-                    # fields[fidx] += "     X"
+                    # WE DO NOT HAVE THIS FILE / RESTORATION LIST
                     EXPORT_SOUNDS_MISSING.append(f)
             soundList.append(f)
 
@@ -310,6 +333,11 @@ def find_sounds(entlist,inbsp):
 
 def processBSP(inbsp):
     global EXPORT_TEXTURES, EXPORT_SOUNDS, EXPORT_ENTS
+    global sndRsrcDir, texRsrcDir
+
+    sndRsrcDir = os.path.join(EXISTSPATH,"sound")
+    texRsrcDir = os.path.join(EXISTSPATH,"textures")
+    
     # print(sys.argv[1])
     # inbsp = sys.argv[1]
     # sof uses stricmp for keyname
