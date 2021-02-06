@@ -1,6 +1,0 @@
-battlegrounds/aln.m32
-battlegrounds/gflogo.m32
-battlegrounds/opslogo.m32
-battlgrounds/cavlogo.m32
-battlgrounds/gf.m32
-battlgrounds/wall_moss.m32

@@ -1,3 +1,0 @@
-combat/combat.wav     E
-combat/wind+.wav     E
-combat/wind.wav     E

@@ -1,5 +1,0 @@
-sofdm6/shotsdistant2.wav     X
-sofdm6/shotsdistant3.wav     E
-sofdm6/skirmish.wav     E
-sofdm6/waterfall.wav     E
-sofdm6/wind+.wav     E

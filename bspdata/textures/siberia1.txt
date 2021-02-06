@@ -1,4 +1,0 @@
-sibtex/metal021.m32
-sibtex/metal065.m32
-sibtex/metal067.m32
-sibtex/metal091.m32

@@ -1,6 +1,0 @@
-bosnia/alpha.m32
-bosnia/ctfb_base.m32
-bosnia/light_blue1.m32
-bosnia/light_florescent.m32
-bosnia/metal_smooth.m32
-bosnia/window2.m32

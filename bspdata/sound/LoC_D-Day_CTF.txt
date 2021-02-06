@@ -1,4 +1,0 @@
-loc/bomb.wav     X
-loc/planelow.wav     X
-loc/radio.wav     X
-loc/shots.wav     X

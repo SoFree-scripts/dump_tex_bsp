@@ -1,5 +1,0 @@
-dl/dlctf_b.m32
-dl/dlctf_r.m32
-dl/fence.m32
-dl/hit_ctfb.m32
-dl/hit_ctfr.m32

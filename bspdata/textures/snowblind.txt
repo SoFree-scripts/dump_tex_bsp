@@ -1,4 +1,0 @@
-godh/black_raider_blue.m32
-godh/snowwall-dn.m32
-godh/snowwall-md.m32
-godh/snowwall-up.m32

@@ -1,4 +1,0 @@
-nbk/nbkcredits.m32
-nbk/nbklogo.m32
-nbk/nbkwindow.m32
-nbk/transwin.m32

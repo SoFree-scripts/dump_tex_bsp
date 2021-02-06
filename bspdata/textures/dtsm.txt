@@ -1,5 +1,0 @@
-deathtrap/bluebase.m32
-deathtrap/bnb32glass.m32
-deathtrap/floor4.m32
-deathtrap/redbase.m32
-deathtrap/stmglass.m32

@@ -1,4 +1,0 @@
-[r'dam]/[r'dam]grind1.wav     E
-[r'dam]/[r'dam]grind2.wav     E
-[r'dam]/[r'dam]ollie.wav     E
-[r'dam]/[r'dam]ride2.wav     E

@@ -1,3 +1,0 @@
-rem/_b_gilogo.m32
-rem/_r_gilogo.m32
-rem/remmie.m32

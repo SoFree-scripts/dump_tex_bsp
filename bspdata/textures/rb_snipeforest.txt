@@ -1,2 +1,0 @@
-lianen_01.m32
-tree3.m32

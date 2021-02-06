@@ -1,8 +1,0 @@
-blitzkrieg/ironcross.m32
-blitzkrieg/ironeagle.m32
-blitzkrieg/out_snbag.m32
-blitzkrieg/sawzi.m32
-blitzkrieg/snow_cliff.m32
-blitzkrieg/snow_rockcliff.m32
-blitzkrieg/snow_rockcliff2.m32
-blitzkrieg/snow_rockedge.m32

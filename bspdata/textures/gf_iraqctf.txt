@@ -1,6 +1,0 @@
-gf/3_woodfl.m32
-gf/chain1.m32
-gf/lava1.m32
-gf/lava11.m32
-gf/ribs.m32
-gf/skltns1.m32

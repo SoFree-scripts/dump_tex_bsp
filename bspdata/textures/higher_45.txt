@@ -1,2 +1,0 @@
-rbac/chalkboard_moto1.m32
-rbac/red_rb.m32

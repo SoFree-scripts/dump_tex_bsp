@@ -1,8 +1,0 @@
-signking/mnoffpc1.m32
-signking/skfrtsgn1.m32
-signking/skfrtsgn2.m32
-signking/skfrtsgn3.m32
-signking/skfrtsgn4.m32
-signking/skfrtsgn5.m32
-signking/skfrtsgn6.m32
-signking/skfrtsgn7.m32

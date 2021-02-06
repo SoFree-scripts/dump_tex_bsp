@@ -1,4 +1,0 @@
-vcasnakepit/snakepit.m32
-vcasnakepit/vcalogo.m32
-vcasnakepit/vcaoldlogo.m32
-vcasnakepit/vcatile.m32

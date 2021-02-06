@@ -1,3 +1,0 @@
-[r'dam]/[r'dam]_evillaugh.wav     E
-ambient/gen/airgas/stmlp.wav     E
-misc/hlthstation/health.wav     E

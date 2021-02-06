@@ -1,2 +1,0 @@
-dryvbytext/black.m32
-dryvbytext/wwflogo.m32

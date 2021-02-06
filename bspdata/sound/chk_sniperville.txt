@@ -1,3 +1,0 @@
-rat/blip.wav     E
-rat/stoom.wav     E
-rat/stoom5s.wav     E

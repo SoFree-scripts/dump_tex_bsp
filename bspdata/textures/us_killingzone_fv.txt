@@ -1,3 +1,0 @@
-bannerus.m32
-gtent1.m32
-unitedsoldiers.m32

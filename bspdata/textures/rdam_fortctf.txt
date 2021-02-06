@@ -1,4 +1,0 @@
-[r'dam]/r'dam.m32
-[r'dam]/r'dam2.m32
-[r'dam]/rdam_green.m32
-[r'dam]/rdam_purple.m32

@@ -1,4 +1,0 @@
-bb_crypt/hb1.m32
-bb_crypt/hb2.m32
-bb_crypt/rock1.m32
-bb_crypt/stn2.m32

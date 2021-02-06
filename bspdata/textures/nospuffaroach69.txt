@@ -1,8 +1,0 @@
-highstreet/door3_2_mirrored.m32
-highstreet/door3_mirrored.m32
-highstreet/door4a_mirrored.m32
-highstreet/door6_mirrored.m32
-highstreet/paulaner.m32
-highstreet/pschorr.m32
-highstreet/wall1.m32
-highstreet/wand_weiss.m32

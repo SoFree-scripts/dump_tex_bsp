@@ -1,3 +1,0 @@
-rbac/blue_rb.m32
-rbac/red_rb.m32
-s7ranger/highland.m32

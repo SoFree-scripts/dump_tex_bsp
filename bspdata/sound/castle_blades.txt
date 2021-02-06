@@ -1,3 +1,0 @@
-/ambient/locs/bigfan/fanlp.wav     E
-/ambient/locs/rmtone/freezer.wav     E
-/wepaons/rocket/bigexplode.wav     X

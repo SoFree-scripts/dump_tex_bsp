@@ -1,2 +1,0 @@
-desert/!stonewall2.m32
-longpatrol/rockwall_01.m32

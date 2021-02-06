@@ -1,6 +1,0 @@
-isf/blackbetty.m32
-isf/isf_small_y.m32
-isf/n_a_s.m32
-isf/queen_01.m32
-rbac/red_rb.m32
-rbac/yellow.m32

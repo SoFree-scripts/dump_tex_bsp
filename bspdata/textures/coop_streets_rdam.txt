@@ -1,7 +1,0 @@
-bricks/b_sr_20.m32
-bricks/c_pv_m2.m32
-props/w_sr_ba7b.m32
-props/w_sr_m4a.m32
-props/w_sr_m6d.m32
-props/w_sr_m6e.m32
-props2/ne_rc_c09.m32

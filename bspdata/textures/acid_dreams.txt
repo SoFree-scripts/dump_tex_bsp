@@ -1,5 +1,0 @@
-s7ranger/acid_1.m32
-s7ranger/den3.m32
-s7ranger/green1.m32
-s7ranger/metal_green1.m32
-s7ranger/mik3.m32

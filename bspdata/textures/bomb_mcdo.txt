@@ -1,3 +1,0 @@
-xtra/bluerug.m32
-xtra/darkrug.m32
-xtra/pommes.m32

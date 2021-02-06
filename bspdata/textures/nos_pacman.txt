@@ -1,5 +1,0 @@
-{nos}/ghost.m32
-{nos}/pacman.m32
-{nos}/pacman_floor.m32
-{nos}/pacman_wall.m32
-{nos}/roach1.m32

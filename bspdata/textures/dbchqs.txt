@@ -1,7 +1,0 @@
-dbc/bubba.m32
-dbc/doublet.m32
-dbc/hellwalker.m32
-dbc/intruder.m32
-dbc/logoblk.m32
-dbc/oni.m32
-dbc/widow.m32

@@ -1,3 +1,0 @@
-mymusic/rotor1.wav     X
-mymusic/tunnel1.wav     X
-mymusic/windy.wav     X

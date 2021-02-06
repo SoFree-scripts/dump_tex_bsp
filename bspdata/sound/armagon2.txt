@@ -1,4 +1,0 @@
-akas/letsrock.wav     E
-akas/siren.wav     E
-akas/thunderlg.wav     E
-akas/windtun.wav     E

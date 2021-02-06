@@ -1,3 +1,0 @@
-dust/birds.wav     E
-dust/birds2.wav     E
-dust/hopper.wav     E

@@ -1,2 +1,0 @@
-pointy/bl_base2.m32
-pointy/rd_base2.m32

@@ -1,2 +1,0 @@
-bc/bc_stuco.m32
-bc/bc_stuco2.m32

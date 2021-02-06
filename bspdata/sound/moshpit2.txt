@@ -1,2 +1,0 @@
-mhp_church/01.wav     E
-mhp_church/02.wav     E

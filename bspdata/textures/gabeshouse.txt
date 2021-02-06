@@ -1,4 +1,0 @@
-rbac/amp.m32
-rbac/blue_rb.m32
-rbac/red_rb.m32
-turbopoint/gas4.m32

@@ -1,2 +1,0 @@
-chk/chk.m32
-chk/chk_rule-brds.m32

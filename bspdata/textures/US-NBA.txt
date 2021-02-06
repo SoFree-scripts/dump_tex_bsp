@@ -1,3 +1,0 @@
-bannerus.m32
-logousskeleton.m32
-unitedsoldiers.m32

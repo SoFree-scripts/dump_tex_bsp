@@ -1,4 +1,0 @@
-armory/357.m32
-armory/buddha128x64.m32
-e2u1/metal32_2.m32
-e2u2/metal24_4.m32

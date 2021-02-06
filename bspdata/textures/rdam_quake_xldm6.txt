@@ -1,7 +1,0 @@
-[r'dam]/r'dam.m32
-[r'dam]/rdam_blue.m32
-[r'dam]/rdam_clan.m32
-[r'dam]/rdam_green.m32
-[r'dam]/rdam_red.m32
-[r'dam]2/rdam_akira.m32
-pointygit/light_red7.m32

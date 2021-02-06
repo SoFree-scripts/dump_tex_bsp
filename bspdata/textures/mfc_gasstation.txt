@@ -1,2 +1,0 @@
-mfc/matttribute.m32
-mfc/redriderpic.m32

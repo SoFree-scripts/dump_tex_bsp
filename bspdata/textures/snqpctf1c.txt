@@ -1,2 +1,0 @@
-snqp/gremio.m32
-snqp/inter.m32

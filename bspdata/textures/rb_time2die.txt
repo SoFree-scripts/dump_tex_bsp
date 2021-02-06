@@ -1,2 +1,0 @@
-ctf2000/bluepart.m32
-sincity/clock1.m32

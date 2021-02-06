@@ -1,2 +1,0 @@
-hypnosnipe/oldwood.m32
-hypnosnipe/policeline_pole.m32

@@ -1,2 +1,0 @@
-m32build/bg_tps.m32
-m32build/bliss_portrait.m32

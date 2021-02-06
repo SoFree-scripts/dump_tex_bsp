@@ -1,2 +1,0 @@
-[r'dam]3/rdam_greengrid.m32
-[rdam]/[rdam]_bunny_track_logo.m32

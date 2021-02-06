@@ -1,6 +1,0 @@
-facility/black.m32
-facility/black1.m32
-facility/factiles.m32
-facility/tank1.m32
-facility/tank2.m32
-facility/tank3.m32

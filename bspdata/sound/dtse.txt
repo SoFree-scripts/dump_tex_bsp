@@ -1,3 +1,0 @@
-pstat/bush.wav     E
-pstat/wind+.wav     E
-pstat/woods.wav     E

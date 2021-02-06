@@ -1,7 +1,0 @@
-colab/+0~gymlight.m32
-colab/bush.m32
-colab/fence.m32
-colab/rope1.m32
-colab/wl_mach_wh06.m32
-pstat/+0~gymlight.m32
-pstat/pine2.m32

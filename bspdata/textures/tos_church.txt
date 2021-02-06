@@ -1,6 +1,0 @@
-godh/brick8dark.m32
-godh/hg2.m32
-godh/hg3.m32
-godh/lara.m32
-godh/tombgods-wall.m32
-godh/ushab.m32

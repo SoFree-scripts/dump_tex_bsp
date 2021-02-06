@@ -1,3 +1,0 @@
-fullmoondn.m32
-rbac/metal01.m32
-{nos}/{nos}faceless.m32

@@ -1,7 +1,0 @@
-[r'dam]3/rdam_linked_beam.m32
-[rdam]/[rdam]_bunny_track_logo.m32
-ctf2000/bluepart.m32
-ctf2000/bluepart_alpha.m32
-ctf2000/greenpart.m32
-ctf2000/redpart.m32
-ctf2000/redpart_alpha.m32

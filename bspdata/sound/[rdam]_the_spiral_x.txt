@@ -1,8 +1,0 @@
-[r'dam]/[r'dam]_check.wav     E
-[r'dam]/[r'dam]_drum_loop4.wav     E
-[r'dam]/[r'dam]_funky.wav     E
-[r'dam]/[r'dam]_h_y.wav     E
-[r'dam]/[r'dam]_hit_it.wav     E
-[r'dam]/[r'dam]_jab.wav     E
-[r'dam]/[r'dam]_sratch.wav     E
-[r'dam]/[r'dam]_sratch3.wav     E

@@ -1,3 +1,0 @@
-exp_jpn/light_red.m32
-exp_jpn/light_tiny_blue.m32
-exp_jpn/light_tiny_red.m32

@@ -1,6 +1,0 @@
-[r'dam]2/rdam_doom07.m32
-armory/1_black.m32.m32
-bricks/b_pv_v1e.m32
-bricks/b_pv_v2.m32
-bricks/b_sr_c26.m32
-bricks/b_sr_c27.m32

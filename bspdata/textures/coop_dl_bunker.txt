@@ -1,7 +1,0 @@
-build/3_market1.m32
-build/3_market_window1.m32
-build/3_redbrick_window_a.m32
-build/3_store_brick1.m32
-build/3_store_brick1_bottom.m32
-build/3_store_brick_window.m32
-build/build76_win.m32

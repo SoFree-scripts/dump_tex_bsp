@@ -1,3 +1,0 @@
-pstat/-0out_rk3.m32
-pstat/bush.m32
-pstat/pine2.m32

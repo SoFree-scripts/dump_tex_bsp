@@ -1,8 +1,0 @@
-gf/1_3_plas.m32
-gf/ceiling_.m32
-gf/chainlin.m32
-gf/clip.m32
-gf/cop1_3.m32
-gf/lava1.m32
-gf/metal6_1.m32
-gf/skltns1.m32

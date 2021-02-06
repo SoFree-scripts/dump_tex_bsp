@@ -1,3 +1,0 @@
-combat/bush.m32
-combat/fence.m32
-combat/stwl_t05.m32

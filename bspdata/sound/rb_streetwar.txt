@@ -1,3 +1,0 @@
-birds.wav     X
-eagle.wav     X
-forest.wav     X

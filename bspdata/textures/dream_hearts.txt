@@ -1,2 +1,0 @@
-rbac/red_rb.m32
-s7ranger/orange.m32

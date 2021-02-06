@@ -1,3 +1,0 @@
-kb/kb/kb_intro_kill_bill.wav     E
-kb/kb/kb_twisted_nerve.wav     E
-kb/kb/kb_woo_hoo.wav     E

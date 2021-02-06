@@ -1,3 +1,0 @@
-azgrass.m32
-fullmoondn.m32
-grass_01a.m32

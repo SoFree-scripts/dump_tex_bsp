@@ -1,4 +1,0 @@
-[r'dam]/r'dam_art.m32
-[r'dam]/rdam_hulk2.m32
-[r'dam]2/rdam_che.m32
-[r'dam]2/rdam_quake_01.m32

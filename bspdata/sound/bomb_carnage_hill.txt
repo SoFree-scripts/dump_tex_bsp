@@ -1,3 +1,0 @@
-hell/generator.wav     E
-hell/skirmish3.wav     E
-hell/wind+.wav     E

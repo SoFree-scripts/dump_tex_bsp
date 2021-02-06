@@ -1,5 +1,0 @@
-turbo/countdown.wav     E
-turbo/falltodeath.wav     E
-turbo/jumppad.wav     E
-turbo/jumppad1.wav     E
-turbo/rajump.wav     X

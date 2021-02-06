@@ -1,5 +1,0 @@
-bank/banner256.m32
-bank/body.m32
-bank/button.m32
-bank/policeline_pole.m32
-casino/cas_wall1.m32

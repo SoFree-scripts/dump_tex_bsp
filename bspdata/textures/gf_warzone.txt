@@ -1,3 +1,0 @@
-gf/blue_metal.m32
-gf/lava1.m32
-gf/red_metal.m32

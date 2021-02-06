@@ -1,6 +1,0 @@
-[r'dam]/rdam_conquer_logo.m32
-[r'dam]/rdam_hulk2.m32
-[r'dam]2/rdam_akira.m32
-[r'dam]2/rdam_che.m32
-[r'dam]2/rdam_run_dmc_2.m32
-rope.m32

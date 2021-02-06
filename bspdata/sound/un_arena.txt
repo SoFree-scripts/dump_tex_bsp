@@ -1,5 +1,0 @@
-undertow/bigmove2.wav     E
-undertow/cagemov.wav     E
-undertow/siren.wav     E
-undertow/waterfall1.wav     E
-undertow/waterfall3.wav     E

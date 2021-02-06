@@ -1,3 +1,0 @@
-/bomb.wav     E
-/impact/explosion/big.wav     E
-fwbell.wav     E

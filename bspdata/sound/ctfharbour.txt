@@ -1,3 +1,0 @@
-ctfharbour/baw.wav     E
-ctfharbour/harbour.wav     E
-ctfharbour/jaws2.wav     E

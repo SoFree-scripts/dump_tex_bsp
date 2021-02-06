@@ -1,2 +1,0 @@
-rbac/pmp.m32
-rbac/yellow.m32

@@ -1,5 +1,0 @@
-pointygit/2_blockwall_c2.m32
-pointygit/light_red6.m32
-pointygit/light_red7.m32
-pointygit/snow.m32
-pointygit/snow_fence.m32

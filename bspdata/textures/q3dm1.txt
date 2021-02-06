@@ -1,3 +1,0 @@
-common/caulk.m32
-gothic_trim/metalsupsolid.m32
-gothic_trim/pitted_rust3.m32

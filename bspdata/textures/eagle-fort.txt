@@ -1,2 +1,0 @@
-huge/bluebase.m32
-huge/redbase.m32

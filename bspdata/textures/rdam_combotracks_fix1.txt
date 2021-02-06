@@ -1,3 +1,0 @@
-[r'dam]3/rdam_green_line.m32
-[r'dam]3/rdam_linked_beam.m32
-[rdam]/[rdam]_bunny_track_logo.m32

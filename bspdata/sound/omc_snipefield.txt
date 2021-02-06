@@ -1,2 +1,0 @@
-pacend.wav     X
-pacstart.wav     X

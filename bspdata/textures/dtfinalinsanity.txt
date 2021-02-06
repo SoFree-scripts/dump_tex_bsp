@@ -1,6 +1,0 @@
-deathtrap/bnb32.m32
-deathtrap/bnb32glass.m32
-deathtrap/crate.m32
-deathtrap/finger.m32
-deathtrap/stm.m32
-deathtrap/stmglass.m32

@@ -1,2 +1,0 @@
-/ambient/gen/airgas/steamrls.wav     E
-/ambient/nature/wind/wndsnow.wav     E

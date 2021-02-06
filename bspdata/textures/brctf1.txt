@@ -1,8 +1,0 @@
-brctf/door_woodcolmb.m32
-brctf/file_cabinet4.m32
-brctf/file_cabinet4_side.m32
-brctf/thatch_ceiling.m32
-brctf/thatch_roof.m32
-brctf/wood_lightpole.m32
-brctf/woodbeam.m32
-brctf/woodwall2.m32

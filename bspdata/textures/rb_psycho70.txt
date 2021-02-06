@@ -1,3 +1,0 @@
-turbo/crdn.m32
-turbo/crlf.m32
-turbo/crup.m32

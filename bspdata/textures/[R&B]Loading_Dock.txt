@@ -1,2 +1,0 @@
-rbac/bea_v1.m32
-rbac/trainstation_01.m32

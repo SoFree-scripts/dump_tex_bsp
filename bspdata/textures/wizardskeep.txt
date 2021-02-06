@@ -1,6 +1,0 @@
-wizardskeep/rock1.m32
-wizardskeep/rock2.m32
-wizardskeep/rock3.m32
-wizardskeep/rock4.m32
-wizardskeep/rocktop.m32
-wizardskeep/rocktransition.m32

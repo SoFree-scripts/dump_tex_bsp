@@ -1,4 +1,0 @@
-huge/bluebase.m32
-huge/control_bottom.m32
-huge/control_top.m32
-huge/redbase.m32

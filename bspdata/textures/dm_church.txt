@@ -1,2 +1,0 @@
-snow.m32
-snow_fence.m32

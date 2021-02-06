@@ -1,3 +1,0 @@
-sound/ambient/gen/airgas/steamrls.wav     X
-sound/ambient/gen/electric/buzz.wav     X
-sound/ambient/gen/electric/spark1.wav     X

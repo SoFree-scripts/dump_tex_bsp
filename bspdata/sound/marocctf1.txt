@@ -1,5 +1,0 @@
-c:/program files/raven/sof/base/sound/maroc/forest_amb_01.wav     X
-d:/sof platinum/base/sound/maroc/forest_amb_01.wav     X
-world/citybglow.wav     E
-world/citybglow2.wav     E
-world/fire_sm.wav     E

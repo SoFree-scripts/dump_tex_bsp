@@ -1,1 +1,0 @@
-camp/sf_trans_decal.m32

@@ -1,6 +1,0 @@
-[r'dam]/r'dam.m32
-[r'dam]/rdam_blue.m32
-[r'dam]/rdam_green.m32
-[r'dam]/rdam_red.m32
-[r'dam]3/r'dam_coffee.m32
-[r'dam]3/r'dam_divingborad.m32
