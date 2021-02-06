@@ -209,7 +209,8 @@ def find_sounds(entlist,a_sof_map):
             # make sure we get a string ending in .wav
             if wavReq == WAVLESS:
                 if f.endswith(".wav"):
-                    print(f"WARNING: mapname:{inbsp} has non-functioning sound field \"{f}\" {clss} @{fld}, remove .wav extension")
+                    if DEBUG:
+                        print(f"WARNING: mapname:{inbsp} has non-functioning sound field \"{f}\" {clss} @{fld}, remove .wav extension")
                 else:
                     if '.' in f:
                         fields[fidx] = f.split(".")[0]
@@ -255,8 +256,9 @@ if LOGGING:
 stringfile = io.StringIO(entlist.tobytes().decode("latin-1"))
 entlist_lines = stringfile.readlines()
 stringfile.close()
-if classExists(entlist_lines,"ambient_generic"):
-    print(f"WARNING: mapname:{inbsp} has non-functioning sound field in classname ambient_generic is not valid for sof1.")
+if DEBUG:
+    if classExists(entlist_lines,"ambient_generic"):
+        print(f"WARNING: mapname:{inbsp} has non-functioning sound field in classname ambient_generic is not valid for sof1.")
 # print( type(data))
 print("__TEXTURES__")
 all_textures = dump_textures(data)
