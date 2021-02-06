@@ -1,6 +1,8 @@
 import struct
 import sys
 import io
+import os
+import json
 
 LOGGING=True
 DEBUG=False
@@ -32,6 +34,12 @@ def grab_lump(lump_num,a_sof_map):
 # get the entity_table text file out of bsp file
 def dump_textures(a_sof_map):
     
+    has_defaults = False
+    if os.path.isfile("ignore_defaults_tex.txt"):
+        with open("ignore_defaults_tex.txt",'r') as f:
+            def_sounds = json.load(f)
+        has_defaults = True
+
     alltex,lump_size = grab_lump(5,a_sof_map)
 
     # print(alltex[40:60].tobytes())
@@ -42,7 +50,12 @@ def dump_textures(a_sof_map):
     textures = []
     index = 0
     while index < lump_size:
-        textures.append ( (struct.unpack_from('32s',alltex,index+TEXNAME_OFFSET)[0].decode('latin-1').rstrip("\x00") + ".m32").lower() )
+        name = (struct.unpack_from('32s',alltex,index+TEXNAME_OFFSET)[0].decode('latin-1').rstrip("\x00") + ".m32").lower()
+        if has_defaults:
+            if name not in def_sounds:
+                textures.append ( name )
+        else:
+            textures.append ( name )
         index += SURFACE_HEADER_LEN
 
     textures = sorted(set(textures))
@@ -199,6 +212,12 @@ fieldFindSet = (("trigger_useable","targetname",REQUIRES_WAV),
 # get the exact classname data from entity text buffer
 def find_sounds(entlist,a_sof_map):
 
+    has_defaults = False
+    if os.path.isfile("ignore_defaults_sound.txt"):
+        with open("ignore_defaults_sound.txt",'r') as f:
+            def_sounds = json.load(f)
+        has_defaults = True
+
     soundList = []
     for clss,fld,wavReq in fieldFindSet:
         fields = grabFields(entlist,clss,fld)
@@ -207,6 +226,11 @@ def find_sounds(entlist,a_sof_map):
         fields = list(set(fields))
         deleteme = []
         for fidx,f in enumerate(fields):
+
+            if has_defaults:
+                if f in def_sounds:
+                    delete.append(fidx)
+
             # make sure we get a string ending in .wav
             if wavReq == WAVLESS:
                 if f.endswith(".wav"):
@@ -233,6 +257,7 @@ def find_sounds(entlist,a_sof_map):
                         # if '.' in f:
                         #     fields[fidx] = f.split(".")[0]
                         # fields[fidx] += ".wav"
+
 
         for d in sorted(deleteme,reverse=True):
             del fields[d]
