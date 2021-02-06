@@ -29,12 +29,9 @@ try:
 	shutil.rmtree("bspdata")
 except:
 	pass
+
 try:
-	os.makedirs("bspdata")
-except:
-	pass
-try:
-	os.makedirs("bspdata/sound")
+	os.makedirs("bspdata/sound/")
 except:
 	pass
 try:
@@ -46,6 +43,16 @@ try:
 except:
 	pass
 
+try:
+	os.makedirs("bspdata/sound_exist")
+except:
+	pass
+
+try:
+	os.makedirs("bspdata/sound_missing")
+except:
+	pass
+
 for root, dirs, files in os.walk(mapdir):
 	for f in files:
 		mapname,extension = os.path.splitext(f)
@@ -54,22 +61,33 @@ for root, dirs, files in os.walk(mapdir):
 		full_path = os.path.join(root,f)
 		fpath_rel = os.path.relpath(full_path,mapdir).replace("\\","/")
 		# ret = os.system('python do.py ' + "\"" + full_path + "\"")
-		bsp_parse.processBSP(full_path)
-		texs = bsp_parse.EXPORT_TEXTURES
-		with open("bspdata/textures/" + mapname + ".txt","w",encoding="latin-1") as f:
-			for t in texs:
-				f.write(f"{t}\n")
+		ret = bsp_parse.processBSP(full_path)
+		if ret == 0:
+			texs = bsp_parse.EXPORT_TEXTURES
+			if texs:
+				with open("bspdata/textures/" + mapname + ".txt","w",encoding="latin-1") as ff:
+					for t in texs:
+						ff.write(f"{t}\n")
 
-		snds = bsp_parse.EXPORT_SOUNDS
-		with open("bspdata/sound/" + mapname + ".txt","w",encoding="latin-1") as f:
-			for s in snds:
-				f.write(f"{s}\n")
+			snds = bsp_parse.EXPORT_SOUNDS
+			if snds:
+				with open("bspdata/sound/" + mapname + ".txt","w",encoding="latin-1") as ff:
+					for s in snds:
+						ff.write(f"{s}\n")
 
-		ents = bsp_parse.EXPORT_ENTS
-		with open("bspdata/entlists/" + mapname + ".txt","w",encoding="latin-1") as f:
-			f.write(ents)
-				
+			ents = bsp_parse.EXPORT_ENTS
+			if ents:
+				with open("bspdata/entlists/" + mapname + ".txt","w",encoding="latin-1") as ff:
+					ff.write(ents)
+					
+			snds = bsp_parse.EXPORT_SOUNDS_MISSING
+			if snds:
+				with open("bspdata/sound_missing/" + mapname + ".txt","w",encoding="latin-1") as ff:
+					for s in snds:
+						ff.write(f"{s}\n")
 
-		# if ret != 0:
-		# 	print("ERROR!!!!!!!")
-		# 	sys.exit(1)
+			snds = bsp_parse.EXPORT_SOUNDS_EXIST
+			if snds:
+				with open("bspdata/sound_exist/" + mapname + ".txt","w",encoding="latin-1") as ff:
+					for s in snds:
+						ff.write(f"{s}\n")

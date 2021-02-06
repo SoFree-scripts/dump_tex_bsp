@@ -5,7 +5,7 @@ import os
 import json
 
 # Dont Print to console?
-SILENT=True
+SILENT=False
 # Write to a file?
 LOGGING=False
 # Show helpful warnings about broken map fields?
@@ -20,6 +20,9 @@ EXISTSPATH=""
 EXPORT_TEXTURES = []
 EXPORT_SOUNDS = []
 EXPORT_ENTS = ""
+
+EXPORT_SOUNDS_MISSING = []
+EXPORT_SOUNDS_EXIST = []
 
 
 # def get_tex():
@@ -231,8 +234,8 @@ fieldFindSet = (("trigger_useable","targetname",REQUIRES_WAV),
                 ("target_speaker","noise",OPTIONAL_WAV)
                )
 # get the exact classname data from entity text buffer
-def find_sounds(entlist,a_sof_map):
-
+def find_sounds(entlist,inbsp):
+    global EXPORT_SOUNDS_MISSING, EXPORT_SOUNDS_EXIST
     has_defaults = False
     if os.path.isfile("ignore_defaults_sound.txt"):
         with open("ignore_defaults_sound.txt",'r') as f:
@@ -240,6 +243,9 @@ def find_sounds(entlist,a_sof_map):
         has_defaults = True
 
     soundList = []
+    EXPORT_SOUNDS_MISSING = []
+    EXPORT_SOUNDS_MISSING_EXIST = []
+
     for clss,fld,wavReq in fieldFindSet:
         fields = grabFields(entlist,clss,fld)
         if not fields:
@@ -279,20 +285,25 @@ def find_sounds(entlist,a_sof_map):
                         #     fields[fidx] = f.split(".")[0]
                         # fields[fidx] += ".wav"
 
-
-            if EXISTSCHECK:
-                if os.path.isfile(os.path.normcase(os.path.join(os.path.join(EXISTSPATH,"sound"),fields[fidx].lstrip('/'))) ):
-                    fields[fidx] += "     E"
-                else:
-                    fields[fidx] += "     X"
-
-
         for d in sorted(deleteme,reverse=True):
             del fields[d]
 
-        soundList.extend(fields)
+        rsrcDir = os.path.join(EXISTSPATH,"sound")
+        for fidx,f in enumerate(fields):
+            if EXISTSCHECK:
+                if os.path.isfile(os.path.normcase(os.path.join(rsrcDir,fields[fidx].lstrip('/'))) ):
+                    # fields[fidx] += "     E"
+                    EXPORT_SOUNDS_EXIST.append(f)
+                else:
+                    # fields[fidx] += "     X"
+                    EXPORT_SOUNDS_MISSING.append(f)
+            soundList.append(f)
+
+        # soundList.extend(fields)
 
     # print(soundList)
+    EXPORT_SOUNDS_EXIST = sorted(set(EXPORT_SOUNDS_EXIST))
+    EXPORT_SOUNDS_MISSING = sorted(set(EXPORT_SOUNDS_MISSING))
     return sorted(set(soundList))
 
 
@@ -333,6 +344,7 @@ def processBSP(inbsp):
     if not SILENT:
         print("__TEXTURES__")
     all_textures = dump_textures(data)
+    EXPORT_TEXTURES = all_textures
     if len(all_textures) == 0:
         if not SILENT:
             print(" [NULL]")
@@ -340,8 +352,6 @@ def processBSP(inbsp):
         if not SILENT:
             for t in all_textures:
                 print(" " + t)
-        
-        EXPORT_TEXTURES = all_textures
         if LOGGING:
             with open("textures.txt","w") as f:
                 for each in all_textures:
@@ -349,7 +359,8 @@ def processBSP(inbsp):
 
     if not SILENT:
         print("__SOUNDS__")
-    all_sounds = find_sounds(entlist_lines,data)
+    all_sounds = find_sounds(entlist_lines,inbsp)
+    EXPORT_SOUNDS = all_sounds
     if len(all_sounds) == 0:
         if not SILENT:
             print(" [NULL]")
@@ -358,7 +369,7 @@ def processBSP(inbsp):
             for s in all_sounds:
                 # print(type(s))
                 print(" " + s)
-        EXPORT_SOUNDS = all_sounds
+        
         if LOGGING:
             with open("sounds.txt","w") as f:
                 for snd in all_sounds:
