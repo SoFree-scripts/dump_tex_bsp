@@ -205,7 +205,8 @@ def find_sounds(entlist,a_sof_map):
         if not fields:
             continue
         fields = list(set(fields))
-        for fidx,f in enumerate(fields[:]):
+        deleteme = []
+        for fidx,f in enumerate(fields):
             # make sure we get a string ending in .wav
             if wavReq == WAVLESS:
                 if f.endswith(".wav"):
@@ -226,12 +227,15 @@ def find_sounds(entlist,a_sof_map):
                 if f.endswith(".wav"):
                     pass
                 else:
-                    del fields[fidx]
+                    deleteme.append(fidx)
                     if DEBUG == True:
                         print(f"WARNING: mapname:{inbsp} has non-functioning sound field \"{f}\" {clss} @{fld}, append .wav extension")
                         # if '.' in f:
                         #     fields[fidx] = f.split(".")[0]
                         # fields[fidx] += ".wav"
+
+        for d in sorted(deleteme,reverse=True):
+            del fields[d]
 
         soundList.extend(fields)
 
