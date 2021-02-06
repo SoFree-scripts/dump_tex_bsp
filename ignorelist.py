@@ -10,7 +10,7 @@ with open("ignore_defaults_tex.txt","w") as file:
 		for f in files:
 			full_path = os.path.join(root,f)
 			fpath_rel = os.path.relpath(full_path,texdir).replace("\\","/")
-			filelist.append(fpath_rel)
+			filelist.append(fpath_rel.lower())
 
 	j = json.dumps(filelist)
 	file.write(j)
@@ -23,7 +23,7 @@ with open("ignore_defaults_sound.txt","w") as file:
 			full_path = os.path.join(root,f)
 			fpath_rel = os.path.relpath(full_path,sounddir).replace("\\","/")
 
-			filelist.append(fpath_rel)
+			filelist.append(fpath_rel.lower())
 
 	j = json.dumps(filelist)
 	file.write(j)
