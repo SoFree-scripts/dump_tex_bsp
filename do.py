@@ -265,7 +265,10 @@ if DEBUG:
         print(f"WARNING: mapname:{inbsp} has non-functioning sound field in classname ambient_generic is not valid for sof1.")
     
 bspversion = struct.unpack_from('<i',data,4)[0]
-print(f"Parsing map: {inbsp}\nBSPVERSION: {bspversion}")
+print(f"Parsing map: {inbsp}")
+if DEBUG:
+    if bspversion != 46:
+        print(f"WARNING: bspversion is not 46, its {bspversion}, are you sure this is valid sof map?")
 # print( type(data))
 print("__TEXTURES__")
 all_textures = dump_textures(data)
