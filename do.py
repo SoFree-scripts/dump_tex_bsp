@@ -3,7 +3,7 @@ import sys
 import io
 
 LOGGING=True
-
+DEBUG=False
 def search_for_open_bracket(startindex,thelist):
     # search up
     for x in range(startindex,-1,-1):
@@ -205,7 +205,7 @@ def find_sounds(entlist,a_sof_map):
         if not fields:
             continue
         fields = list(set(fields))
-        for fidx,f in enumerate(fields):
+        for fidx,f in enumerate(fields[:]):
             # make sure we get a string ending in .wav
             if wavReq == WAVLESS:
                 if f.endswith(".wav"):
@@ -225,10 +225,13 @@ def find_sounds(entlist,a_sof_map):
                 if f.endswith(".wav"):
                     pass
                 else:
-                    print(f"WARNING: mapname:{inbsp} has non-functioning sound field \"{f}\" {clss} @{fld}, append .wav extension")
-                    if '.' in f:
-                        fields[fidx] = f.split(".")[0]
-                    fields[fidx] += ".wav"
+                    del fields[fidx]
+                    if DEBUG == True:
+                        print(f"WARNING: mapname:{inbsp} has non-functioning sound field \"{f}\" {clss} @{fld}, append .wav extension")
+                        # if '.' in f:
+                        #     fields[fidx] = f.split(".")[0]
+                        # fields[fidx] += ".wav"
+
         soundList.extend(fields)
 
     # print(soundList)
@@ -258,7 +261,7 @@ if classExists(entlist_lines,"ambient_generic"):
 print("__TEXTURES__")
 all_textures = dump_textures(data)
 if len(all_textures) == 0:
-    print(" [NULL]")
+    print(" [NULL]")    
 else:
     for t in all_textures:
         print(" " + t)
