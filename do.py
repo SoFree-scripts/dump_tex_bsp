@@ -263,6 +263,9 @@ stringfile.close()
 if DEBUG:
     if classExists(entlist_lines,"ambient_generic"):
         print(f"WARNING: mapname:{inbsp} has non-functioning sound field in classname ambient_generic is not valid for sof1.")
+    
+bspversion = struct.unpack_from('<i',data,4)[0]
+print(f"Parsing map: {inbsp}\nBSPVERSION: {bspversion}")
 # print( type(data))
 print("__TEXTURES__")
 all_textures = dump_textures(data)
