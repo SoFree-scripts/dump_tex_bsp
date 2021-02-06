@@ -229,7 +229,7 @@ def find_sounds(entlist,a_sof_map):
 
             if has_defaults:
                 if f in def_sounds:
-                    delete.append(fidx)
+                    deleteme.append(fidx)
 
             # make sure we get a string ending in .wav
             if wavReq == WAVLESS:
