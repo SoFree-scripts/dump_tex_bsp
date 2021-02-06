@@ -98,7 +98,7 @@ def dump_textures(a_sof_map):
     while index < lump_size:
         name = (struct.unpack_from('32s',alltex,index+TEXNAME_OFFSET)[0].decode('latin-1').rstrip("\x00") + ".m32").lower()
         if has_defaults:
-            if name not in def_sounds:
+            if name.lstrip('/') not in def_sounds:
                 buildTextures(textures,name)
         else:
             buildTextures(textures,name)
@@ -278,7 +278,7 @@ def find_sounds(entlist,inbsp):
         for fidx,f in enumerate(fields):
 
             if has_defaults:
-                if f in def_sounds:
+                if f.lstrip('/') in def_sounds:
                     deleteme.append(fidx)
 
             # make sure we get a string ending in .wav
