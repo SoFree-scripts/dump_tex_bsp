@@ -1,0 +1,8 @@
+mhp_lego/blau.m32
+mhp_lego/cyan.m32
+mhp_lego/gelb.m32
+mhp_lego/gruen.m32
+mhp_lego/magenta.m32
+mhp_lego/rot.m32
+mhp_lego/schwarz.m32
+mhp_lego/weiss.m32

@@ -1,0 +1,3 @@
+remzone/5insx.wav     E
+warmongr/eagle.wav     E
+warmongr/eagle0.wav     E

@@ -1,0 +1,3 @@
+godh/thunder.wav     E
+godh/thunder2.wav     E
+godh/waterfall.wav     E

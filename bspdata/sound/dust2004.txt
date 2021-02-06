@@ -1,0 +1,2 @@
+d:/sof platinum/base/sound/dust/hopper2.wav     X
+d:/sof platinum/base/sound/warmongr/eagle0.wav     X

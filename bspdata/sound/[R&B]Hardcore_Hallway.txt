@@ -1,0 +1,2 @@
+bark3.wav     E
+bark_growl.wav     E

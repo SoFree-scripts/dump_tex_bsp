@@ -1,0 +1,3 @@
+~snip~/floor1.m32
+~snip~/floor2.m32
+~snip~/wall2.m32

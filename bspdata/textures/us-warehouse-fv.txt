@@ -1,0 +1,3 @@
+[lol].m32
+bannerus.m32
+unitedsoldiers.m32

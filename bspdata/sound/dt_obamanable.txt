@@ -1,0 +1,3 @@
+deathtrap/500pt.wav     E
+deathtrap/50pt.wav     E
+deathtrap/sing_for_change.wav     E

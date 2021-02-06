@@ -1,0 +1,13 @@
+bank/1_off.m32
+bank/1_on.m32
+bank/2_off.m32
+bank/2_on.m32
+bank/3_off.m32
+bank/3_on.m32
+bank/4_off.m32
+bank/4_on.m32
+bank/5_off.m32
+bank/5_on.m32
+bank/safe_deposit.m32
+bank/vaultfront_256.m32
+silver/glass_new2d.m32

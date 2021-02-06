@@ -1,0 +1,7 @@
+aztec/frog1.wav     E
+aztec/frog2.wav     E
+aztec/hopper1.wav     E
+aztec/owl1.wav     E
+godh/poollp.wav     E
+godh/thunder.wav     E
+godh/thunder2.wav     E

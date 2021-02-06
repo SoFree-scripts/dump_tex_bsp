@@ -1,0 +1,14 @@
+wizardskeep/bluefloor.m32
+wizardskeep/bluepentagram_256.m32
+wizardskeep/hec.m32
+wizardskeep/redfloor.m32
+wizardskeep/redpentagram_256.m32
+wizardskeep/rock1.m32
+wizardskeep/rock2.m32
+wizardskeep/rock2a.m32
+wizardskeep/rock3.m32
+wizardskeep/rocktop.m32
+wizardskeep/rocktransition.m32
+wizardskeep/sil.m32
+wizardskeep/wzblue.m32
+wizardskeep/wzred.m32

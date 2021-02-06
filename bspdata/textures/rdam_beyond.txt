@@ -1,0 +1,9 @@
+[r'dam]2/r'dam-clan001.m32
+[r'dam]2/r'dam-clan002.m32
+[r'dam]2/r'dam-clan003.m32
+[r'dam]2/r'dam-clan004.m32
+[r'dam]2/r'dam-clan005.m32
+[r'dam]2/r'dam-clan006.m32
+[r'dam]3/rdam_fod.m32
+[r'dam]3/rdam_o3rock5.m32
+[r'dam]3/rdam_trim2.m32

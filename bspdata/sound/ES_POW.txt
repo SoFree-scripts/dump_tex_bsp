@@ -1,0 +1,8 @@
+mymusic/birds3.wav     X
+mymusic/fight.wav     X
+mymusic/jungle1.wav     X
+mymusic/rotor1.wav     X
+mymusic/thnder1.wav     X
+mymusic/tunnel1.wav     X
+mymusic/water1.wav     X
+mymusic/windy2.wav     X

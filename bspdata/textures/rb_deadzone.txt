@@ -1,0 +1,9 @@
+rbac/dc_monster1.m32
+rbac/jez_crate3.m32
+rbac/kp4ever.m32
+rbac/nott_kcon.m32
+rbac/red_rb.m32
+rbac/sp_dead.m32
+rbac/sp_nosf.m32
+rbac/sp_nott.m32
+rbac/webreaper.m32

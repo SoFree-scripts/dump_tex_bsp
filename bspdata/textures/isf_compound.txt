@@ -1,0 +1,16 @@
+quake/e8_btrim03b.m32
+quake/e8basictrim2_blue.m32
+quake/e8basictrim2_red.m32
+quake/e8basictrim_blue.m32
+quake/e8clangfloor04_blue.m32
+quake/e8clangfloor04_red.m32
+quake/e8trim_blue.m32
+quake/e8trim_red.m32
+rbac/blue_rb.m32
+rbac/nottsmapsmetalend.m32
+rbac/red_rb.m32
+urbanterror/blue_crate.m32
+urbanterror/kz_container2.m32
+urbanterror/r_cement_wall_blue.m32
+urbanterror/r_cement_wall_red.m32
+urbanterror/red_crate.m32

@@ -1,0 +1,4 @@
+pitia/doorc.wav     X
+pitia/keyboard.wav     X
+pitia/ouch.wav     X
+pitia/sneeze.wav     X

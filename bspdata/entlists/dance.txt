@@ -1,0 +1,81 @@
+{
+"ainame" "tsr1"
+"sky" "ny"
+"classname" "worldspawn"
+}
+{
+"angle" "360"
+"origin" "-144 0 -72"
+"classname" "info_player_start"
+}
+{
+"origin" "0 0 0"
+"classname" "light"
+}
+{
+"angle" "180"
+"target" "t1002"
+"origin" "120 0 4"
+"spawnflags" "134"
+"classname" "m_nyc_mskinhead1"
+}
+{
+"spawnflags" "0"
+"Waitaction1" "std_sdance_n_n_n"
+"angle" "360"
+"Wait" "-1"
+"origin" "104 -12 4"
+"targetname" "t1002"
+"target" "t1002"
+"classname" "path_corner"
+}
+{
+"spawnflags" "0"
+"Waitaction1" "STD_XDANCE_N_N_N"
+"angle" "360"
+"Wait" "-1"
+"origin" "74 2 4"
+"targetname" "t1000"
+"Target" "t1000"
+"classname" "path_corner"
+}
+{
+"target" "t1000"
+"spawnflags" "70"
+"origin" "72 -4 4"
+"classname" "m_nyc_fskinchick"
+}
+{
+"spawnflags" "3"
+"angle" "180"
+"origin" "164 40 -34"
+"classname" "misc_generic_radio"
+}
+{
+"model" "*1"
+"angle" "360"
+"classname" "func_door"
+}
+{
+"targetname" "good"
+"attenuation" "3"
+"volume" "1.0"
+"spawnflags" "0"
+"noise" "hamster-dance"
+"origin" "146 38 -22"
+"classname" "target_speaker"
+}
+{
+"origin" "-144 112 0"
+"classname" "info_player_deathmatch"
+}
+{
+"origin" "-144 -80 0"
+"classname" "info_player_deathmatch"
+}
+{
+"model" "*2"
+"delay" "1"
+"target" "good"
+"classname" "trigger_multiple"
+}

@@ -1,0 +1,12 @@
+di_stack/c1a3_w1c.m32
+di_stack/c1a3_w1e.m32
+di_stack/c1a4_silo2b.m32
+di_stack/crete4_flr01.m32
+di_stack/ge_ceil_dark.m32
+di_stack/ge_ceil_grey.m32
+di_stack/ge_door_green.m32
+di_stack/ge_flr_glack.m32
+di_stack/ge_flr_yellow.m32
+di_stack/ge_wall_green.m32
+di_stack/ge_wall_stone.m32
+di_stack/lab1_trim3.m32

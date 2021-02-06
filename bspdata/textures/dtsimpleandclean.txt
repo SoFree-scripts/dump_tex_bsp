@@ -1,0 +1,16 @@
+deathtrap/bnb32.m32
+deathtrap/ceiling1.m32
+deathtrap/ceiling2.m32
+deathtrap/ceiling3.m32
+deathtrap/ceiling4.m32
+deathtrap/crate.m32
+deathtrap/finger.m32
+deathtrap/floor1.m32
+deathtrap/floor2.m32
+deathtrap/floor3.m32
+deathtrap/floor4.m32
+deathtrap/stm.m32
+deathtrap/wall1.m32
+deathtrap/wall2.m32
+deathtrap/wall3.m32
+deathtrap/wall4.m32

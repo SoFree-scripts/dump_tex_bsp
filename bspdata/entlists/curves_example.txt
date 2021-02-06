@@ -1,0 +1,37 @@
+{
+"sky" "jhnebula3"
+"classname" "worldspawn"
+}
+{
+"model" "*1"
+"classname" "func_wall"
+}
+{
+"model" "*2"
+"classname" "func_wall"
+}
+{
+"model" "*3"
+"classname" "func_door"
+"spawnflags" "128"
+"angle" "-2"
+"team" "door1"
+"speed" "300"
+"lip" "40"
+"soundname" "doorhitechblastmetallight1"
+}
+{
+"model" "*4"
+"classname" "func_door"
+"angle" "-1"
+"spawnflags" "128"
+"team" "door1"
+"speed" "300"
+"lip" "40"
+"soundname" "doorhitechblastmetallight1"
+}
+{
+"origin" "32 432 -8"
+"angle" "90"
+"classname" "info_player_start"
+}

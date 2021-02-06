@@ -1,0 +1,13 @@
+/ambient/gen/comp/hum.wav     E
+/ambient/gen/electric/spark2.wav     E
+/ambient/gen/wtrfx/poollp.wav     E
+/ambient/nature/wind/wndsht2.wav     E
+/impact/explosion/big.wav     E
+4-5.wav     E
+6-7.wav     E
+impact/explosion/exp2.wav     E
+irrational.wav     E
+morelife.wav     E
+notsporting.wav     E
+numb.wav     E
+timetodie.wav     E

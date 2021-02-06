@@ -1,0 +1,8 @@
+desert/!hardsand.m32
+desert/!sandwall.m32
+desert/!stonewall.m32
+desert/!stonewall2.m32
+desert/sandroad.m32
+desert/sandwindow.m32
+desert/w_crate1.m32
+desert/w_crate2.m32

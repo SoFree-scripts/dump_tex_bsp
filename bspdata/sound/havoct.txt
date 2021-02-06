@@ -1,0 +1,2 @@
+ambient/gen/wtrfx/howsnack.wav     E
+ambient/gen/wtrfx/logic.wav     E

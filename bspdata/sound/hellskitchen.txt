@@ -1,0 +1,3 @@
+colab/bush.wav     E
+colab/combat.wav     E
+colab/wind+.wav     E

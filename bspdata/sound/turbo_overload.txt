@@ -1,0 +1,3 @@
+turbo/diddy1.wav     E
+turbo/fall.wav     E
+turbo/ping.wav     E

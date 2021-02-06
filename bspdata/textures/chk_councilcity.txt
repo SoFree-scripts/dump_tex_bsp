@@ -1,0 +1,14 @@
+bank/fence.m32
+chk/chk.m32
+chk/chklogostatic.m32
+chk/citysign.m32
+chk/clan-rules.m32
+chk/treebark.m32
+chk/treeleaves.m32
+combat/fence.m32
+factory/lava.m32
+gf/glass_ne.m32
+mine/ladder_rung2.m32
+sincity/outhouse.m32
+sincity/outhouseback.m32
+turbopoint/shield.m32

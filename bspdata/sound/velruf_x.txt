@@ -1,0 +1,8 @@
+booger.wav     E
+booger2.wav     E
+brick2.wav     E
+bryche.wav     E
+death-crys.wav     E
+death-madcough.wav     E
+dukenukem.wav     E
+rodeo2.wav     E

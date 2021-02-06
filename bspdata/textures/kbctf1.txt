@@ -1,0 +1,13 @@
+turbo/bluelight.m32
+turbo/darkbluemetal.m32
+turbo/floor1.m32
+turbo/jumpbad.m32
+turbo/nuke.m32
+turbo/pentagram.m32
+turbo/redlight.m32
+turbo/strip.m32
+turbo/wall.m32
+turbo/wall_j4f.m32
+turbo/wall_jumphere.m32
+turbo/wall_thx.m32
+turbo/yellowlight.m32

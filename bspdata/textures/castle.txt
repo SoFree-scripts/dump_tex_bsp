@@ -1,0 +1,12 @@
+casino/bjack.m32
+casino/cas_sub2.m32
+casino/cas_wall1.m32
+casino/cas_wall2.m32
+casino/craps1.m32
+casino/light_sign20a.m32
+casino/roulette.m32
+casino/slot_bboy.m32
+casino/slot_foyle.m32
+casino/slot_ky.m32
+casino/slot_mbomb.m32
+casino/vid_poker.m32

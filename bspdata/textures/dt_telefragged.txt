@@ -1,0 +1,14 @@
+deathtrap/deathwall6.m32
+deathtrap/dt_blue_base.m32
+deathtrap/dt_blue_light.m32
+deathtrap/dt_red_base.m32
+deathtrap/dt_red_light.m32
+deathtrap/dt_skullfinger.m32
+deathtrap/dt_teleporter.m32
+deathtrap/floor4.m32
+deathtrap/infend.m32
+deathtrap/web1.m32
+deathtrap/web2.m32
+deathtrap/web3.m32
+deathtrap/web4.m32
+deathtrap/web5.m32

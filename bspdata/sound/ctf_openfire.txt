@@ -1,0 +1,5 @@
+mymusic/fight2.wav     X
+mymusic/jungle1.wav     X
+mymusic/thnder1.wav     X
+mymusic/trees1.wav     X
+mymusic/windy2.wav     X

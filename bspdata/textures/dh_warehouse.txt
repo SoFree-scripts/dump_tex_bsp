@@ -1,0 +1,10 @@
+dh/blue_d1.m32
+dh/blue_h1.m32
+dh/dh_crate1.m32
+dh/dh_metaldoor.m32
+dh/nmap_dh.m32
+dh/red_d1.m32
+dh/red_h1.m32
+pointy/bl_base.m32
+pointy/rd_base.m32
+quake/e8tinylight.m32

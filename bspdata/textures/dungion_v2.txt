@@ -1,0 +1,13 @@
+deathtrap/bluebase.m32
+deathtrap/crate.m32
+deathtrap/deathwall3.m32
+deathtrap/floor4.m32
+deathtrap/infend.m32
+deathtrap/redbase.m32
+deathtrap/secret.m32
+deathtrap/skullfinger.m32
+deathtrap/web1.m32
+deathtrap/web2.m32
+deathtrap/web3.m32
+deathtrap/web4.m32
+deathtrap/web5.m32

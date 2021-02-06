@@ -1,0 +1,10 @@
+[r'dam]/rdam_conquer_logo.m32
+bricks/b_hl_v2.m32
+bricks/b_hl_v2j.m32
+bricks/b_sr_mv1.m32
+common/li_pv_v2.m32
+floors/fl_sr_v1c.m32
+props2/board_v.m32
+props2/ne_rc_c07a.m32
+props2/ne_rc_c07c.m32
+props2/sg_st_v1.m32

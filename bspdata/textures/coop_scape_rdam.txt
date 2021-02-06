@@ -1,0 +1,3 @@
+maya2_2.m32
+trigger.m32
+wizmet1_2.m32

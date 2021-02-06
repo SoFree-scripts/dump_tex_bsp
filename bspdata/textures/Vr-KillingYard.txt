@@ -1,0 +1,2 @@
+verdun/franz.m32
+verdun/german.m32

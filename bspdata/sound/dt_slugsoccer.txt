@@ -1,0 +1,2 @@
+deathtrap/500pt.wav     E
+deathtrap/50pt.wav     E

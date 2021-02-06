@@ -1,0 +1,3 @@
+kb/kb/rdam_green_hornet.wav     E
+kb/kb/rdam_intro1_kill_bill.wav     E
+kb/kb/rdam_twisted_nerve.wav     E

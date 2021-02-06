@@ -1,0 +1,49 @@
+{
+"sky" "ny"
+"classname" "worldspawn"
+}
+{
+"angle" "360"
+"origin" "-212 0 596"
+"classname" "info_player_start"
+}
+{
+"origin" "8 0 908"
+"classname" "light"
+}
+{
+"origin" "120 -344 600"
+"classname" "info_player_deathmatch"
+}
+{
+"origin" "216 224 600"
+"classname" "info_player_deathmatch"
+}
+{
+"origin" "-112 432 592"
+"classname" "info_player_deathmatch"
+}
+{
+"origin" "112 -64 592"
+"classname" "info_player_deathmatch"
+}
+{
+"origin" "216 216 584"
+"classname" "item_weapon_sniper_rifle"
+}
+{
+"origin" "-112 432 584"
+"classname" "item_weapon_sniper_rifle"
+}
+{
+"origin" "-216 -8 584"
+"classname" "item_weapon_sniper_rifle"
+}
+{
+"origin" "120 -344 584"
+"classname" "item_weapon_sniper_rifle"
+}
+{
+"origin" "112 -56 584"
+"classname" "item_weapon_sniper_rifle"
+}

@@ -1,0 +1,17 @@
+pstat/+0~gymlight.m32
+pstat/-0crete4_flr01.m32
+pstat/-0crete4_wall01.m32
+pstat/-0out_rk3.m32
+pstat/-1cstrike_wb6bk.m32
+pstat/-1out_grnd2b.m32
+pstat/-3yel_rock4.m32
+pstat/-3yel_rock5.m32
+pstat/bark.m32
+pstat/bush.m32
+pstat/crate24.m32
+pstat/crete3_flr04.m32
+pstat/darkgr1.m32
+pstat/fities_dr03.m32
+pstat/pstat_mud.m32
+pstat/pstatoutdr.m32
+pstat/rope1.m32

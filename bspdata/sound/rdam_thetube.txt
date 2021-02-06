@@ -1,0 +1,6 @@
+[r'dam]/[r'dam]_bigjmp.wav     E
+[r'dam]/[r'dam]_paris_drumloop1.wav     E
+[r'dam]/[r'dam]_prepare.wav     E
+[r'dam]/[r'dam]_say_hello_to_my_little_frend.wav     E
+[r'dam]/[r'dam]_woohoo.wav     E
+chong/boing.wav     E

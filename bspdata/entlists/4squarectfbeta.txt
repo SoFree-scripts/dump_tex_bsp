@@ -1,0 +1,240 @@
+{
+"message" "Sauron learning mapping"
+"classname" "worldspawn"
+}
+{
+"origin" "-308 400 64"
+"classname" "info_player_start"
+}
+{
+"count" "1"
+"origin" "2260 393 62"
+"classname" "item_ctf_flag"
+}
+{
+"count" "1"
+"origin" "2256 384 76"
+"classname" "misc_ctf_base"
+}
+{
+"angle" "180"
+"origin" "2480 396 76"
+"classname" "info_player_team1"
+}
+{
+"angle" "360"
+"origin" "1776 400 76"
+"classname" "info_player_team1"
+}
+{
+"angle" "180"
+"origin" "2484 -408 76"
+"classname" "info_player_team1"
+}
+{
+"angle" "360"
+"origin" "1780 -404 76"
+"classname" "info_player_team1"
+}
+{
+"angle" "180"
+"origin" "2496 0 76"
+"classname" "info_player_team1"
+}
+{
+"angle" "360"
+"origin" "1792 4 76"
+"classname" "info_player_team1"
+}
+{
+"count" "2"
+"origin" "-196 -2367 62"
+"classname" "item_ctf_flag"
+}
+{
+"count" "2"
+"origin" "-200 -2368 76"
+"classname" "misc_ctf_base"
+}
+{
+"angle" "360"
+"origin" "-391.5 -1591.9 72"
+"classname" "info_player_team2"
+}
+{
+"angle" "360"
+"origin" "-390.8 -1931.1 72"
+"classname" "info_player_team2"
+}
+{
+"angle" "360"
+"origin" "-400 -2407.7 72"
+"classname" "info_player_team2"
+}
+{
+"angle" "180"
+"origin" "288 -1588.3 72"
+"classname" "info_player_team2"
+}
+{
+"angle" "180"
+"origin" "288.6 -1927.5 72"
+"classname" "info_player_team2"
+}
+{
+"angle" "180"
+"origin" "279.5 -2404.1 72"
+"classname" "info_player_team2"
+}
+{
+"origin" "-24 -1992 55"
+"classname" "item_weapon_shotgun"
+}
+{
+"origin" "1568 -1888 55"
+"classname" "item_weapon_shotgun"
+}
+{
+"origin" "2188 0 55"
+"classname" "item_weapon_shotgun"
+}
+{
+"origin" "572 96 55"
+"classname" "item_weapon_shotgun"
+}
+{
+"origin" "1664 -455 54"
+"classname" "item_weapon_pistol2"
+}
+{
+"origin" "1564 -115 54"
+"classname" "item_weapon_pistol2"
+}
+{
+"origin" "456 -1523 54"
+"classname" "item_weapon_pistol2"
+}
+{
+"origin" "560 -2099 54"
+"classname" "item_weapon_pistol2"
+}
+{
+"origin" "-157 133 53"
+"classname" "item_equip_armor"
+}
+{
+"origin" "2311 -2127 53"
+"classname" "item_equip_armor"
+}
+{
+"origin" "1071 -1895 53"
+"classname" "item_equip_armor"
+}
+{
+"origin" "1063 93 53"
+"classname" "item_equip_armor"
+}
+{
+"origin" "2587 -2453 52"
+"classname" "item_health_small"
+}
+{
+"origin" "2571 -1513 52"
+"classname" "item_health_small"
+}
+{
+"origin" "2583 -485 52"
+"classname" "item_health_small"
+}
+{
+"origin" "2567 471 52"
+"classname" "item_health_small"
+}
+{
+"origin" "1675 479 52"
+"classname" "item_health_small"
+}
+{
+"origin" "-457 459 52"
+"classname" "item_health_small"
+}
+{
+"origin" "-481 -465 52"
+"classname" "item_health_small"
+}
+{
+"origin" "459 -477 52"
+"classname" "item_health_small"
+}
+{
+"origin" "-449 -1529 52"
+"classname" "item_health_small"
+}
+{
+"origin" "-469 -2453 52"
+"classname" "item_health_small"
+}
+{
+"origin" "1659 -1517 52"
+"classname" "item_health_small"
+}
+{
+"origin" "-90 -916 63"
+"classname" "item_equip_c4"
+}
+{
+"origin" "-90 -1032 63"
+"classname" "item_equip_c4"
+}
+{
+"origin" "2262 -860 63"
+"classname" "item_equip_c4"
+}
+{
+"origin" "2262 -976 63"
+"classname" "item_equip_c4"
+}
+{
+"origin" "1946 444 63"
+"classname" "item_equip_c4"
+}
+{
+"origin" "-374 124 63"
+"classname" "item_equip_c4"
+}
+{
+"origin" "-426 -2296 63"
+"classname" "item_equip_c4"
+}
+{
+"origin" "2390 -2208 63"
+"classname" "item_equip_c4"
+}
+{
+"origin" "2254 -928 67"
+"classname" "item_equip_c4"
+}
+{
+"origin" "1923 -184 52"
+"classname" "item_equip_grenade"
+}
+{
+"origin" "139 -1836 52"
+"classname" "item_equip_grenade"
+}
+{
+"origin" "399 -420 52"
+"classname" "item_equip_grenade"
+}
+{
+"origin" "1707 -1548 52"
+"classname" "item_equip_grenade"
+}
+{
+"origin" "-353 -16 52"
+"classname" "item_equip_grenade"
+}
+{
+"origin" "2491 -2328 52"
+"classname" "item_equip_grenade"
+}

@@ -1,0 +1,4 @@
+deathtrap/bnb32.m32
+deathtrap/finger.m32
+deathtrap/floor4.m32
+deathtrap/stm.m32

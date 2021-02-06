@@ -1,0 +1,4 @@
+chavesvillage/desapareca.wav     E
+chavesvillage/risada.wav     E
+chavesvillage/satanas.wav     E
+chavesvillage/sentesemal.wav     E

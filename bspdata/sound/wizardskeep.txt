@@ -1,0 +1,3 @@
+ambience/guit1.wav     E
+de_westwood_hd/smallgust2.wav     E
+nm_goodbadugly_hd.wav     E

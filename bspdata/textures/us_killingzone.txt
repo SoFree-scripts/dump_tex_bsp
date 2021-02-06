@@ -1,0 +1,2 @@
+bannerus.m32
+unitedsoldiers.m32

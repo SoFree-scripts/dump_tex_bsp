@@ -1,0 +1,2 @@
+s1.wav     E
+s2.wav     E

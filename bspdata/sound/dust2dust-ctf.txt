@@ -1,0 +1,4 @@
+dust/birds.wav     E
+dust/hopper.wav     E
+dust/hopper2.wav     E
+dust/sheep.wav     E
