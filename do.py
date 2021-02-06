@@ -205,9 +205,7 @@ REQUIRES_WAV = 2
 OPTIONAL_WAV = 1
 WAVLESS = 0
 fieldFindSet = (("trigger_useable","targetname",REQUIRES_WAV),
-                ("target_speaker","noise",OPTIONAL_WAV),
-                ("worldspawn","startmusic",OPTIONAL_WAV),
-                ("worldspawn","sounds",OPTIONAL_WAV)
+                ("target_speaker","noise",OPTIONAL_WAV)
                )
 # get the exact classname data from entity text buffer
 def find_sounds(entlist,a_sof_map):

@@ -2,18 +2,18 @@ custom_sound optional .wav:
  target_speaker @noise
 custom_sound forced "wav" ending:
  trigger_useable @targetname
- worldspawn @sounds
- worldspawn @startmusic
 
 not_sound:
  environ_effect
  environ_effect_continual
 
-ambient_set:
- environ_soundgen
- func_ambientset
+Fixed Names routed through sound.ams
 
-bmodel_set:
+ambient_set @soundname:
+ environ_soundgen
+ func_ambientset .ams FILE
+
+bmodel_set @soundname:
  spawner_monster @soundName
  spawner @soundName
  func_train
@@ -25,5 +25,10 @@ bmodel_set:
  func_door_rotating_smart
  func_door_portcullis
 
-warning:
- ambient_generic
+
+music_set:
+	worldspawn @musicset .dms FILE
+	worldspawn @startmusic INDEX
+
+old_CDTRACK_Control
+	worldspawn @sounds INDEX
