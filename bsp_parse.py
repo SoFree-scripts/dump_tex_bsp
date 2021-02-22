@@ -96,7 +96,8 @@ def dump_textures(a_sof_map):
     textures = []
     index = 0
     while index < lump_size:
-        name = (struct.unpack_from('32s',alltex,index+TEXNAME_OFFSET)[0].decode('latin-1').rstrip("\x00") + ".m32").lower()
+        name = (struct.unpack_from('32s',alltex,index+TEXNAME_OFFSET)[0].decode('latin-1').rstrip("\x00")).lower()
+        name  = os.path.splitext(name)[0] + ".m32"
         if has_defaults:
             if name.lstrip('/') not in def_sounds:
                 buildTextures(textures,name)
