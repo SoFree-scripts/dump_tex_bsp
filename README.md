@@ -1,2 +1,3 @@
-# dump_tex_bsp
+Prefer pictures? Start with **[HUMANS.md](HUMANS.md)**.
+
 Erm, good luck.

@@ -1,0 +1,82 @@
+# dump_tex_bsp — system overview
+# A report generator for Soldier of Fortune maps: read the texture lump and the
+# entity table of every .bsp, then list the textures and sounds each map needs.
+# Zones run left to right: entry points -> core -> state -> external.
+# Style classes set strokes only, so light and dark stay readable.
+
+title: |md
+  # dump_tex_bsp
+  Walks a tree of Soldier of Fortune .bsp files and reports which textures and sounds every map references — a restore list for a map archive.
+| {near: top-center}
+
+direction: right
+grid-columns: 2
+grid-rows: 2
+horizontal-gap: 110
+vertical-gap: 100
+
+entry: Entry points {
+  direction: down
+
+  allmaps: `allmaps.py` · driver: walk every `.bsp` under a hardcoded Windows path, wipe the output dir, write eight report folders
+  lib: `bsp_parse.py` · the library: lump reader, texture lister, entity-table sound finder
+  gen: `ignorelist.py` · one-off: turn a resource tree into the two ignore lists
+  knobs: module globals `SILENT`, `LOGGING`, `DEBUG`, `EXISTSCHECK`, `EXISTSPATH` · edited in the source, no flags
+}
+
+core: Core {
+  direction: down
+
+  magic: magic and version · `IBSP` at offset 0, version at 4, a warning if it is not 46
+  lump: `grab_lump` · header is 8 B, then 8-byte offset/size pairs, returns a memoryview slice
+  tex: `dump_textures` · lump 5, 76-byte surface headers, name at +40 as 32 B latin-1, forced to `.m32`
+  ent: entity table · lump 0 decoded latin-1 and split into lines
+  field: `grabField` and `grabFields` · find a classname, walk to its brace, pull one field out
+  snd: `find_sounds` · `trigger_useable` keeps only `.wav`, `target_speaker` gets `.wav` appended
+  exist: `EXISTSCHECK` · optional `os.path.isfile` against the texture and sound tree of that map
+  defaults: ignore lists · every stock SoF asset filtered out, so only map content remains
+  report: `allmaps.py` writes · `textures`, `sound`, `entlists`, `*_exist` and `*_missing` per map
+
+  magic -> lump
+  lump -> tex: two of the twenty-odd lumps are read
+  lump -> ent
+  ent -> field -> snd: one field per classname, two classnames total
+  tex -> defaults
+  snd -> defaults
+  defaults -> exist: only survivors are checked on disk
+  exist -> report
+}
+
+state: State {
+  direction: down
+
+  ignoretex: `ignore_defaults_tex.txt` · JSON array of lowercased relative texture paths {shape: cylinder}
+  ignoresnd: `ignore_defaults_sound.txt` · the same for sound paths {shape: cylinder}
+  rar: `bspdata.rar` · 2.6 MB of an earlier report from this tool, committed to the repo {shape: cylinder}
+  out: output tree named by the first argument · deleted and rebuilt on every run {shape: cylinder}
+}
+
+ext: External {
+  direction: down
+
+  maps: `*.bsp` · SoF IBSP v46 maps, in a directory tree the walker mirrors
+  base: resource tree `base/textures`, `base/sound` · what EXISTSCHECK stats, at a hardcoded Windows path
+  stdlib: Python 3 stdlib only · `struct`, `memoryview`, `json`, `shutil`, nothing to install
+  operator: a person · reads the report folders and diffs two runs by hand, nothing automates that
+}
+
+entry -> core: the driver passes each map path to the library
+core -> state: two ignore lists in, one report tree out
+core -> ext: reads maps and optionally stats their assets
+
+classes: {
+  entry: {style: {stroke: "#2f6fbf"}}
+  core: {style: {stroke: "#2f8f5f"}}
+  state: {style: {stroke: "#a86a12"; stroke-dash: 3}}
+  ext: {style: {stroke: "#8a4fbf"; stroke-dash: 5}}
+}
+
+entry.class: entry
+core.class: core
+state.class: state
+ext.class: ext
